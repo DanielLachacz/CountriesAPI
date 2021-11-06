@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="20G224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CountryCD" representedClassName=".CountryCD" isAbstract="YES" syncable="YES">
+        <attribute name="altSpellings" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+        <attribute name="area" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="borders" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer"/>
+        <attribute name="callingCodes" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+        <attribute name="capital" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+        <attribute name="flag" optional="YES" attributeType="String"/>
+        <attribute name="latlng" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[Double]"/>
+        <attribute name="region" optional="YES" attributeType="String"/>
+        <relationship name="nameCD" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="NameCD" inverseName="countryCD" inverseEntity="NameCD"/>
+    </entity>
+    <entity name="NameCD" representedClassName="NameCD" syncable="YES">
+        <attribute name="common" optional="YES" attributeType="String"/>
+        <attribute name="official" optional="YES" attributeType="String"/>
+        <relationship name="countryCD" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CountryCD" inverseName="nameCD" inverseEntity="CountryCD"/>
+    </entity>
+    <elements>
+        <element name="CountryCD" positionX="-63" positionY="-18" width="128" height="164"/>
+        <element name="NameCD" positionX="-54" positionY="45" width="128" height="74"/>
+    </elements>
+</model>
